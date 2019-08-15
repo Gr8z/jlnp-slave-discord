@@ -1,6 +1,7 @@
 FROM jenkins/jnlp-slave:alpine
 
 ENV VERSION=v10.16.2 NPM_VERSION=6
+USER root
 
 RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++ && \
   for server in ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
