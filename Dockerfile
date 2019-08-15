@@ -2,7 +2,9 @@ FROM jenkins/jnlp-slave:alpine
 
 ENV NODE_VERSION 10.16.2
 
-RUN apk add --no-cache \
+RUN addgroup -g 1000 node \
+    && adduser -u 1000 -G node -s /bin/sh -D node \
+    && apk add --no-cache \
         libstdc++ \
     && apk add --no-cache --virtual .build-deps \
         binutils-gold \
