@@ -1,6 +1,7 @@
 FROM jenkins/jnlp-slave:alpine
-
 ENV NODE_VERSION 10.16.2
+
+USER root
 
 RUN addgroup -g 1000 node \
     && adduser -u 1000 -G node -s /bin/sh -D node \
