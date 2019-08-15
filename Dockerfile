@@ -3,8 +3,8 @@ ENV NODE_VERSION 10.16.2
 
 USER root
 
-RUN addgroup -g 1000 node \
-    && adduser -u 1000 -G node -s /bin/sh -D node \
+RUN addgroup -g 2000 node \
+    && adduser -u 2000 -G node -s /bin/sh -D node \
     && apk add --no-cache \
         libstdc++ \
     && apk add --no-cache --virtual .build-deps \
